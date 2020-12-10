@@ -49,7 +49,7 @@ const restaurant = {
 
 //****************************************************************//
 
-//MAPS
+//MAPS --> The Map object holds key-value pairs and remembers the original insertion order of the keys.
 console.log('\n');
 console.log('//********** MAPS **********//');
 
@@ -58,7 +58,7 @@ console.log('\n');
 console.log('*** Section 1 ***');
 
 const restaurantMap = new Map();
-restaurantMap.set('Name', 'Classico Italiano');
+restaurantMap.set('Name', 'Classico Italiano'); //map set() method -> add or updates an element to map object with the particular key-value pair. Each value must have a unique key.
 restaurantMap.set(1, 'Firenze, Italy');
 restaurantMap.set(2, 'Lisbon, Portugal');
 console.log(restaurantMap);
@@ -114,7 +114,7 @@ console.log(question);
 //Converting Objects to Maps
 console.log('\n');
 console.log('Object');
-console.log(Object.entries(restaurant.openingHours));
+console.log(Object.entries(restaurant.openingHours)); //The Object.entries() method returns an array of a given object's
 console.log('From Object to Map');
 const hoursMap = new Map(Object.entries(restaurant.openingHours));
 console.log(hoursMap);
@@ -136,7 +136,8 @@ console.log([...question]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
 
-//SETS --> does not have indexes
+//SETS --> The Set object lets you store unique values of any type, whether primitive values or object references.
+//     --> does not have indexes
 //     --> we cannot retreave values from a set
 console.log('\n');
 console.log('//********** SETS **********//');
@@ -205,7 +206,7 @@ console.log(values);
 //Entire Object
 console.log('\n');
 console.log('*** Loping Objects - Entire Object ***');
-const entries = Object.entries(restaurant.openingHours);
+const entries = Object.entries(restaurant.openingHours); //The Object.entries() method returns an array of a given object's
 console.log(entries);
 
 for (const [key, { open, close }] of entries) {
@@ -236,7 +237,7 @@ console.log('*** Optional Chaining Ex***');
 const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 for (const day of days) {
-  const varOpen = restaurant.openingHours[day]?.open ?? 'Closed';
+  const varOpen = restaurant.openingHours[day]?.open ?? 'Closed'; //?? --> Nullish: null or undefined (NOT 0 or '')
   console.log(
     `${varOpen === 'Closed' ? 'Closed' : `On ${day}, we open at ${varOpen}`}`
   );
@@ -328,7 +329,7 @@ for (const [i, element] of menu2.entries()) {
 console.log('\n');
 console.log('//********** THE NULLISH COALESCING OPERATOR (??) **********//');
 
-restaurant.numGuests = 0;
+restaurant.numGuests = 0; //0 is a falsy value
 
 const guests = restaurant.numGuests || 10;
 console.log(guests);
@@ -527,8 +528,10 @@ console.log('\n');
 console.log('*** Destructuring with Mutating Variables ***');
 let a = 111;
 let b = 999;
+console.log(a, b);
+
 const obj = { a: 23, b: 27, c: 14 };
-({ a, b } = obj);
+({ a, b } = obj); ///it is mandatory to use () to wrap
 console.log(a, b);
 
 //Nested Objects
